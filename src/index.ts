@@ -6,6 +6,7 @@ import currencyRouter from "./currency/router";
 
 dotenv.config();
 const app: Express = express();
+app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
