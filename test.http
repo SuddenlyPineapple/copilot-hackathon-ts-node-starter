@@ -1,4 +1,18 @@
 ###
+POST http://localhost:3000/currencyFlush
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test('should add new rates to existing rates',
+        () => {
+            console.log(response.status);
+            client.assert(response.status === 200);
+        });
+%}
+
+###
 GET http://localhost:3000/health-check
 
 > {%
@@ -145,7 +159,7 @@ GET http://localhost:3000/currency
                         },
                         {
                             "currency": "EUR",
-                            "price_pln": "4.5",
+                            "price_pln": "4.50",
                             "date": "2023-01-02"
                         },
                         {
@@ -155,7 +169,7 @@ GET http://localhost:3000/currency
                         },
                         {
                             "currency": "USD",
-                            "price_pln": "4",
+                            "price_pln": "4.00",
                             "date": "2023-01-02"
                         }
                     ]
